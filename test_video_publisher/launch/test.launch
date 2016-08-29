@@ -1,0 +1,3 @@
+<launch>
+	<node name="test_video_publisher" pkg="test_video_publisher" type="test_video_publisher"/>
+</launch>
