@@ -1,5 +1,5 @@
 <launch>
-    <node name="ov2640_driver" pkg="phobos_nanopi" type="ov2640_driver" launch-prefix="sudo" output="screen">
-        <param name="topic" value="/nanopi/$(env ROS_NANOPI_ID)/image"/>
+    <node name="ov2640_driver" pkg="phobos_nanopi" type="ov2640_driver" output="screen">
+        <param name="topic" value="/nanopi/image"/>
     </node>
 </launch>
