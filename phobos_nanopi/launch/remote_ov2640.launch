@@ -1,0 +1,8 @@
+<launch>
+    <machine name="nanopi" address="10.42.0.58" env-loader="/opt/ros/kinetic/env.sh" user="agh" password="phobos256"/>
+
+    <node machine="nanopi" name="ov2640_driver" pkg="phobos_nanopi" type="ov2640_driver" output="screen">
+        <param name="topic" value="/nanopi/image"/>
+    </node>
+
+</launch>
