@@ -1,0 +1,5 @@
+<launch>
+    <node name="ov2640_driver" pkg="phobos_nanopi" type="ov2640_driver0">
+        <param name="topic" value="/nanopi/$(env ROS_IP)/image"/>
+    </node>
+</launch>
