@@ -1,3 +1,0 @@
-<launch>
-    <node name="ov2640_driver" pkg="phobos_nanopi" type="ov2640_driver"/>
-</launch>
