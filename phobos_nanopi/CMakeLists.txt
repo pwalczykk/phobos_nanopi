@@ -11,7 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
     tf
     cv_bridge
     image_transport
-    phobos_shared
 )
 
 find_package(OpenCV 3.0.0 REQUIRED)
