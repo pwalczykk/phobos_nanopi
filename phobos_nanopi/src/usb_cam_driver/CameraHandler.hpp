@@ -1,7 +1,6 @@
 #ifndef GETIMAGE_HPP_
 #define GETIMAGE_HPP_
 
-#include <ros/ros.h>
 #include <opencv2/opencv.hpp>
 
 class CameraHandler{
