@@ -17,10 +17,9 @@ int main(int argc, char** argv){
     ros::Rate loop_rate(10);
     while(ros::ok()){
         cam1.PublishImage();
-        cam1.CameraHandler::Release();
-
         loop_rate.sleep();
     }
 
+    cam1.CameraHandler::Release();
     return 0;
 }
