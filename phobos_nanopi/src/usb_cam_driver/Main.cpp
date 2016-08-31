@@ -5,22 +5,22 @@
 int main(int argc, char** argv){
 
 
-    ros::init(argc, argv, "titanum_camera_driver");
+    ros::init(argc, argv, "usb_cam_driver");
     ros::NodeHandle nh;
     ros::Rate loop_rate(10);
 
     int cam_num1;
     nh.param("/camera_number", cam_num1, 0);
 
-    std::string topic;
-    nh.param("topic", topic, (std::string)"/nanopi/usb_cam/image");
+    int delay_ms;
+    nh.param("/delay_ms", delay_ms, 0);
 
     ImagePublisher cam1(cam_num1);
     cam1.CameraHandler::Init();
     // cam1.CameraHandler::Set(320, 240, 30);
 
-    Synchronizer synchronizer("/rover/vison/stereo_synchro", &nh);
-    synchronizer.WaitForStart();
+    Synchronizer synchronizer("/rover/camera/stereo_synchro", &nh);
+    synchronizer.WaitForStart(delay_ms);
 
 
     while(ros::ok()){

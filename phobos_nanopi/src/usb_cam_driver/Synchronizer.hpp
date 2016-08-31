@@ -21,13 +21,20 @@ public:
         this->START_FLAG = 1;
     }
 
-    void WaitForStart(){
+    void WaitForStart(int delay_ms){
         ros::Rate loop_rate(1000);
         while(ros::ok()){
             ros::spinOnce();
             if(START_FLAG == 1)
                 break;
             loop_rate.sleep();
+        }
+
+        int timer = 0;
+        while(ros::ok()){
+            timer++;
+            loop_rate.sleep();
+            if(timer > delay_ms) break;
         }
     }
 };

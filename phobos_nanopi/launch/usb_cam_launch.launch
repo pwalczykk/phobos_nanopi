@@ -1,0 +1,6 @@
+<launch>
+    <node name="usb_cam_driver" pkg="phobos_nanopi" type="usb_cam_driver">
+        <param name="cam_num"
+        <param name="topic" value="/rover/camera$(env ROS_NANOPI_NO)/image"/>
+    </node>
+</launch>
