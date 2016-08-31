@@ -25,10 +25,10 @@ protected:
 public:
     ImagePublisher(int cam_num) : CameraHandler(cam_num){
         std::ostringstream oss_camera;
-        oss_camera << "camera" << cam_num;
+        oss_camera << "/rover/camera" << cam_num << "/image";
 
         it = new image_transport::ImageTransport(nh);
-        pub_img = it->advertise(oss_camera.str() + "/image", 1);
+        pub_img = it->advertise(oss_camera.str(), 1);
 
         header.seq = 0;
         header.frame_id = oss_camera.str();
