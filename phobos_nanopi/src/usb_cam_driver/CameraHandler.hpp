@@ -17,8 +17,9 @@ public:
     }
 
     void Init(){
-        cap.open(cam_num);
-        //TODO : obsługa błedu
+        while(!cap.open(cam_num)){
+            cv::waitKey(1);
+        }
     }
 
     void Release(){
