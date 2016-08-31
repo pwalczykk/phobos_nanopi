@@ -23,7 +23,7 @@ protected:
     std_msgs::Header header;
 
 public:
-    ImagePublisher(int cam_num) : CameraHandler(cam_num){
+    ImagePublisher(int cam_num) : CameraHandler(0){
         std::ostringstream oss_camera;
         oss_camera << "/rover/camera" << cam_num << "/image";
 
