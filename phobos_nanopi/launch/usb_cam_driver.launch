@@ -1,5 +1,5 @@
 <launch>
-    <node name="usb_cam_driver" pkg="phobos_nanopi" type="usb_cam_driver" output="screen" ns="rover">
+    <node name="usb_cam_driver_$(env ROS_NANOPI_NO)" pkg="phobos_nanopi" type="usb_cam_driver" output="screen" ns="rover">
         <param name="/camera_number" value="$(env ROS_NANOPI_NO)"/>
         <param name="/delay_ms" value="0"/>
     </node>
