@@ -18,7 +18,7 @@ public:
 
     void Init(){
         while(!cap.open(cam_num)){
-            cv::waitKey(1);
+            cv::waitKey(100);
         }
     }
 
