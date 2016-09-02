@@ -21,8 +21,8 @@ int main(int argc, char** argv){
     cam1.CameraHandler::Init();
     // cam1.CameraHandler::Set(320, 240, 30);
 
-    // Synchronizer synchronizer("/rover/camera/stereo_synchro", &nh);
-    // synchronizer.WaitForStart(delay_ms);
+    Synchronizer synchronizer("/rover/camera/stereo_synchro", &nh);
+    synchronizer.WaitForStart(delay_ms);
 
 
     while(ros::ok()){
