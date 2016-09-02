@@ -22,7 +22,7 @@ int main(int argc, char** argv){
     // cam1.CameraHandler::Set(320, 240, 30);
 
     Synchronizer synchronizer("/rover/camera/stereo_synchro", &nh);
-    synchronizer.WaitForStart(delay_ms);
+    synchronizer.WaitForSynchro(delay_ms);
 
 
     while(ros::ok()){

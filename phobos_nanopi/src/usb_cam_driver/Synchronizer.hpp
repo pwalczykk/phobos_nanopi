@@ -3,6 +3,7 @@
 
 #include <ros/ros.h>
 #include <std_msgs/Bool.h>
+#include <unistd.h>
 
 class Synchronizer{
     ros::NodeHandle *nh;
@@ -21,7 +22,7 @@ public:
         this->START_FLAG = 1;
     }
 
-    void WaitForStart(int delay_ms){
+    void WaitForSynchro(int delay_ms){
         ros::Rate loop_rate(1000);
         while(ros::ok()){
             ros::spinOnce();
@@ -29,12 +30,10 @@ public:
                 break;
             loop_rate.sleep();
         }
+        START_FLAG = 0;
 
-        int timer = 0;
-        while(ros::ok()){
-            timer++;
-            loop_rate.sleep();
-            if(timer > delay_ms) break;
+        if(delay_ms > 0){
+            usleep(delay_ms*1000);
         }
     }
 };

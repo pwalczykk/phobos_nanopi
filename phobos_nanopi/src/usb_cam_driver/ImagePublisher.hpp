@@ -40,6 +40,7 @@ public:
         header.stamp = ros::Time::now();
 
         CameraHandler::Capture();
+        cv::waitKey(1);
 
         img = cv_bridge::CvImage(header, "bgr8", CameraHandler::frame).toImageMsg();
 
