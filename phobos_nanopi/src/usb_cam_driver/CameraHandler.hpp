@@ -2,6 +2,7 @@
 #define GETIMAGE_HPP_
 
 #include <opencv2/opencv.hpp>
+#include <unistd.h>
 
 class CameraHandler{
     cv::VideoCapture cap;
@@ -18,7 +19,7 @@ public:
 
     void Init(){
         while(!cap.open(cam_num)){
-            cv::waitKey(100);
+            usleep(10000);
         }
     }
 
