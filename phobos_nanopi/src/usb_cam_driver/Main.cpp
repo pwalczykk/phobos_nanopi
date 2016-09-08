@@ -75,7 +75,7 @@ int main(int argc, char** argv){
         if(synchronizer.START_FLAG){
             cam1.PublishImage();
             cam1_info.PublishInfo();
-            // ROS_WARN("Info publisher");
+            ROS_WARN("publish");
         }
         loop_rate.sleep();
     }
