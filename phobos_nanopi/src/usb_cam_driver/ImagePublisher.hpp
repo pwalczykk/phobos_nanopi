@@ -18,7 +18,7 @@ class ImagePublisher : public CameraHandler{
     image_transport::ImageTransport* it;
     image_transport::Publisher pub_img;
 
-protected:
+public:
     sensor_msgs::ImagePtr img;
     std_msgs::Header header;
 
