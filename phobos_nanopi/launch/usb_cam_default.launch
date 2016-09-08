@@ -1,0 +1,5 @@
+<launch>
+    <node name="usb_cam_driver_$(env ROS_NANOPI_NO)" pkg="usb_cam" type="usb_cam_node" output="screen" ns="rover" respawn="true">
+        <remap from="/rover/usb_cam_driver_$(env ROS_NANOPI_NO)/image_raw" to="/rover/camera$(env ROS_NANOPI_NO)/image"/>
+    </node>
+</launch>
