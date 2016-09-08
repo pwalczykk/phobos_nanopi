@@ -19,7 +19,7 @@ public:
     }
 
     void MsgInterrupt(const std_msgs::Bool msg){
-        this->START_FLAG = 1;
+        this->START_FLAG = msg.data;
     }
 
     void WaitForSynchro(int delay_ms){
@@ -30,7 +30,6 @@ public:
                 break;
             loop_rate.sleep();
         }
-        START_FLAG = 0;
 
         if(delay_ms > 0){
             usleep(delay_ms*1000);

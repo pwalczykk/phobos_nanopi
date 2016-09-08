@@ -28,9 +28,9 @@ public:
     }
 
     void Set(int res_x, int res_y, int fps){
-        // cap.set(CV_CAP_PROP_FRAME_WIDTH,res_x);
-        // cap.set(CV_CAP_PROP_FRAME_HEIGHT,res_y);
-        // cap.set(CV_CAP_PROP_FPS,fps);
+        cap.set(CV_CAP_PROP_FRAME_WIDTH,res_x);
+        cap.set(CV_CAP_PROP_FRAME_HEIGHT,res_y);
+        cap.set(CV_CAP_PROP_FPS,fps);
     }
 
     void Capture(){

@@ -19,14 +19,16 @@ int main(int argc, char** argv){
 
     ImagePublisher cam1(cam_num1);
     cam1.CameraHandler::Init();
-    // cam1.CameraHandler::Set(320, 240, 30);
+    cam1.CameraHandler::Set(320, 240, 10);
 
     Synchronizer synchronizer("/rover/camera/stereo_synchro", &nh);
     synchronizer.WaitForSynchro(delay_ms);
 
 
     while(ros::ok()){
-        cam1.PublishImage();
+        if(synchronizer.START_FLAG){
+            cam1.PublishImage();
+        }
         loop_rate.sleep();
     }
 
