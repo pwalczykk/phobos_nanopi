@@ -71,6 +71,7 @@ int main(int argc, char** argv){
     nh.param("binning_x", binning_x, (int)0);   cam1_info.msg.binning_x = binning_x;
     nh.param("binning_y", binning_y, (int)0);   cam1_info.msg.binning_y = binning_y;
 
+
     while(ros::ok()){
         if(synchronizer.START_FLAG){
             cam1.PublishImage();
